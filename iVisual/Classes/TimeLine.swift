@@ -41,6 +41,7 @@ public extension TimeLine {
         let id = eidBuilder.get()
         element.visualElementId = id
         overlayElementDic[id] = element
+        renderCurrentFrameAgain()
         return id
     }
     
@@ -48,23 +49,24 @@ public extension TimeLine {
         let id = eidBuilder.get()
         element.visualElementId = id
         specialEffectsElementDic[id] = element
+        renderCurrentFrameAgain()
         return id
     }
     
     func removed(element useId: VisualElementIdentifer) {
-        if overlayElementDic.has(key: useId) {
+        if overlayElementDic.index(forKey: useId) != nil {
             overlayElementDic.removeValue(forKey: useId)
         }
-        if specialEffectsElementDic.has(key: useId) {
+        if specialEffectsElementDic.index(forKey: useId) != nil {
             specialEffectsElementDic.removeValue(forKey: useId)
         }
+        renderCurrentFrameAgain()
     }
 }
 
 extension TimeLine {
     func apply(source: CIImage, at time: CMTime) -> CIImage {
         currentTime = time
-        
         var image = source
         
         // 修改视频布局显示 `contentMode`
@@ -113,5 +115,11 @@ extension TimeLine {
         }
         
         return image
+    }
+    
+    
+    /// 重新渲染当前这一帧
+    func renderCurrentFrameAgain() {
+//        CompositionCoordinatorPool.shared.pop()?.needRenderAgain()
     }
 }

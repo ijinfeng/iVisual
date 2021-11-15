@@ -15,6 +15,10 @@ struct CompositionCoordinator {
     func apply(source: CIImage, at time: CMTime) -> CIImage {
         return timeLine.apply(source: source, at: time)
     }
+    
+    func needRenderAgain() {
+        NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "哈哈哈"), object: nil)
+    }
 }
 
 

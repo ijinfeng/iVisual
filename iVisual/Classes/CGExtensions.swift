@@ -70,7 +70,7 @@ extension CGAffineTransform {
 
 extension CGRect {
     func aspectFit(to rect: CGRect) -> CGRect {
-        let _size = size.aspectFit(in: rect.size)
+        let _size = size.aspectFit(to: rect.size)
         let x = (rect.size.width - _size.width) / 2
         let y = (rect.size.height - _size.height) / 2
         return CGRect(origin: CGPoint(x: x, y: y), size: _size)
@@ -97,6 +97,10 @@ extension CGRect {
     }
 }
 
+extension CGRect {
+    var center: CGPoint { CGPoint(x: midX, y: midY) }
+
+}
 
 extension CGSize {
     

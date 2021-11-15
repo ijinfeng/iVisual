@@ -1,16 +1,28 @@
 PODS:
+  - FileBox (0.4.2):
+    - SnapKit
   - iVisual (0.1.0)
+  - SnapKit (4.2.0)
 
 DEPENDENCIES:
+  - FileBox (~> 0.4.1)
   - iVisual (from `../`)
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - FileBox
+    - SnapKit
 
 EXTERNAL SOURCES:
   iVisual:
     :path: "../"
 
 SPEC CHECKSUMS:
+  FileBox: 89cb7308c486fd57a9dafdec1a5bbb339b5ae764
   iVisual: 3a2034a860327853eb70402c415d15b136963194
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 725ab738baf7082dd7ea03b2301ded7a1fd31479
+PODFILE CHECKSUM: 7bd40300fd4c6c58513182441538df1df3334f41
 
 COCOAPODS: 1.10.1

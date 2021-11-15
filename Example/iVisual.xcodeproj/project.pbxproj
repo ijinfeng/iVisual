@@ -13,6 +13,9 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		7862C78127420DDD008B8942 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7862C78027420DDD008B8942 /* VideoPlayerViewController.swift */; };
+		7862C78327420E2B008B8942 /* sample_clip1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 7862C78227420E2B008B8942 /* sample_clip1.m4v */; };
+		7862C78527422FB8008B8942 /* shafa.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7862C78427422FB8008B8942 /* shafa.gif */; };
 		C0F4F2D84F3377903CEAB95A /* Pods_iVisual_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D01655F58E40F454B494ECB /* Pods_iVisual_Tests.framework */; };
 		C85169BD66890F07E4A05ED0 /* Pods_iVisual_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1741B6C80508CC28744FB3C8 /* Pods_iVisual_Example.framework */; };
 /* End PBXBuildFile section */
@@ -31,7 +34,7 @@
 		0D01655F58E40F454B494ECB /* Pods_iVisual_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iVisual_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1741B6C80508CC28744FB3C8 /* Pods_iVisual_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iVisual_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		179BDB955003B21055843503 /* Pods-iVisual_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iVisual_Example.release.xcconfig"; path = "Target Support Files/Pods-iVisual_Example/Pods-iVisual_Example.release.xcconfig"; sourceTree = "<group>"; };
-		491B0683D6D86ED4E4376377 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		491B0683D6D86ED4E4376377 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* iVisual_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iVisual_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,11 +45,14 @@
 		607FACE51AFB9204008FA782 /* iVisual_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iVisual_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		7862C78027420DDD008B8942 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
+		7862C78227420E2B008B8942 /* sample_clip1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample_clip1.m4v; sourceTree = "<group>"; };
+		7862C78427422FB8008B8942 /* shafa.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = shafa.gif; sourceTree = "<group>"; };
 		8528C6295C21B33C09447CFA /* Pods-iVisual_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iVisual_Tests.release.xcconfig"; path = "Target Support Files/Pods-iVisual_Tests/Pods-iVisual_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		ACC5A2FDEC6EE41720CB32A6 /* Pods-iVisual_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iVisual_Tests.debug.xcconfig"; path = "Target Support Files/Pods-iVisual_Tests/Pods-iVisual_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		B24997E4A63C98EE9F950FC1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		B24997E4A63C98EE9F950FC1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DF8EEEC932570E3553901303 /* Pods-iVisual_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iVisual_Example.debug.xcconfig"; path = "Target Support Files/Pods-iVisual_Example/Pods-iVisual_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		F6BFD44081AE62637E319D0D /* iVisual.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = iVisual.podspec; path = ../iVisual.podspec; sourceTree = "<group>"; };
+		F6BFD44081AE62637E319D0D /* iVisual.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = iVisual.podspec; path = ../iVisual.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +83,6 @@
 				ACC5A2FDEC6EE41720CB32A6 /* Pods-iVisual_Tests.debug.xcconfig */,
 				8528C6295C21B33C09447CFA /* Pods-iVisual_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -116,7 +121,10 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				7862C78027420DDD008B8942 /* VideoPlayerViewController.swift */,
+				7862C78427422FB8008B8942 /* shafa.gif */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				7862C78227420E2B008B8942 /* sample_clip1.m4v */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -227,6 +235,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -249,6 +258,8 @@
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				7862C78327420E2B008B8942 /* sample_clip1.m4v in Resources */,
+				7862C78527422FB8008B8942 /* shafa.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,10 +324,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-iVisual_Example/Pods-iVisual_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FileBox/FileBox.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/iVisual/iVisual.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FileBox.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iVisual.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7862C78127420DDD008B8942 /* VideoPlayerViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
@@ -484,7 +500,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -499,7 +515,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

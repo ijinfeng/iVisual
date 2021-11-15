@@ -33,6 +33,7 @@ public class BaseAnimation {
         case translate
     }
     public var type: AnimationType = .none
+    public init() {}
 }
 
 extension BaseAnimation {
@@ -111,7 +112,7 @@ public class AnimationOverlay: OverlayProvider {
             var aci = 0
             if an.isRepeat {
                 aci = Int(relativeSeconds / duration)
-                relativeTime = CMTimeSubtract(relativeTime, CMTime.init(value: an.duration.value * Int64(aci), an.duration.timescale))
+                relativeTime = CMTimeSubtract(relativeTime, CMTime.init(value: an.duration.value * Int64(aci), timescale: an.duration.timescale))
             }
             
             if an.isAutoreverse && aci % 2 == 1 {
@@ -195,7 +196,7 @@ public extension AnimationOverlay {
     }
     
     func remove(animation forkey: String?) {
-        guard animations.has(key: forkey) else {
+        guard animations.index(forKey: forkey) != nil else {
             return
         }
         animations.removeValue(forKey: forkey)

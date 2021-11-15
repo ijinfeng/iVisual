@@ -15,7 +15,9 @@ public class VideoCustomComposition: NSObject, AVVideoCompositing {
     
     public static var ciContext: CIContext = CIContext()
     
-    private let coordinator: CompositionCoordinator? = CompositionCoordinatorPool.shared.pop()
+    private var coordinator: CompositionCoordinator? = CompositionCoordinatorPool.shared.pop()
+    
+    private var lastRequest: AVAsynchronousVideoCompositionRequest?
     
     public enum VideoCustomCompositionError: Error {
         case newPixelBufferRequestFailed
@@ -26,6 +28,23 @@ public class VideoCustomComposition: NSObject, AVVideoCompositing {
     
     public var requiredPixelBufferAttributesForRenderContext: [String : Any] = [String(kCVPixelBufferPixelFormatTypeKey): kCVPixelFormatType_420YpCbCr8BiPlanarFullRange,
                                                                          String(kCVPixelBufferOpenGLESCompatibilityKey): true]
+    
+    private override init() {
+        super.init()
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.init(rawValue: "哈哈哈"), object: nil, queue: nil) { n in
+            guard let request = self.lastRequest  else {
+                return
+            }
+            let _internal = request.value(forKey: "internal") as! NSObject
+            _internal.setValue(false, forKey: "isFinished")
+            print("需要重新渲染这一帧")
+            if let pixelBuffer = self.handleNewPixelBuffer(from: request) {
+                request.finish(withComposedVideoFrame: pixelBuffer)
+            } else {
+                request.finish(with: VideoCustomCompositionError.newPixelBufferRequestFailed)
+            }
+        }
+    }
     
     public func renderContextChanged(_ newRenderContext: AVVideoCompositionRenderContext) {
         renderQueue.sync { [weak self] in
@@ -38,6 +57,7 @@ public class VideoCustomComposition: NSObject, AVVideoCompositing {
             guard let strongSelf = self else {
                 return
             }
+            strongSelf.lastRequest = asyncVideoCompositionRequest
             if strongSelf.shouldCancelAllPendingRequests {
                 asyncVideoCompositionRequest.finishCancelledRequest()
             } else {
