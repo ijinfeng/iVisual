@@ -1,0 +1,22 @@
+{
+  "name": "iVisual",
+  "version": "0.1.0",
+  "summary": "A short description of iVisual.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/ijinfeng/iVisual",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "ijinfeng": "851406283@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/ijinfeng/iVisual.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "iVisual/Classes/**/*"
+}

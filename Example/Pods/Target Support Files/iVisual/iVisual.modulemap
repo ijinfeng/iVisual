@@ -1,0 +1,6 @@
+framework module iVisual {
+  umbrella header "iVisual-umbrella.h"
+
+  export *
+  module * { export * }
+}

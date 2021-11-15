@@ -1,0 +1,16 @@
+PODS:
+  - iVisual (0.1.0)
+
+DEPENDENCIES:
+  - iVisual (from `../`)
+
+EXTERNAL SOURCES:
+  iVisual:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  iVisual: 3a2034a860327853eb70402c415d15b136963194
+
+PODFILE CHECKSUM: 725ab738baf7082dd7ea03b2301ded7a1fd31479
+
+COCOAPODS: 1.10.1

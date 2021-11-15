@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'iVisual_Example' do
+  pod 'iVisual', :path => '../'
+
+  target 'iVisual_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
