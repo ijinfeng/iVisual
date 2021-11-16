@@ -239,7 +239,7 @@ timeLine.insert(element: overlay)
         player.replaceCurrentItem(with: playerItem)
 ```
 
-![animate.gif](%E5%9F%BA%E4%BA%8E%E8%87%AA%E5%AE%9A%E4%B9%89AVVideoComposition%E7%9A%84%E8%A7%86%E9%A2%91%E8%B4%B4%E7%BA%B8%E5%92%8C%E7%89%B9%E6%95%88%E5%AE%9E%E7%8E%B0%20b9b65a0f19e84652b71be8d985025660/animate.gif)
+![animate.gif](https://github.com/ijinfeng/iVisual/tree/main/resource/animate.gif)
 
 而动态贴纸的原理其实和静态贴纸的原理是一样的，只不过多了解析gif图的过程。我们需要把gif的每一帧读取出来，得到他们每一帧的播放时长，总播放时长，总帧数。从而可以决定在某一时刻播放哪一帧画面。
 
@@ -276,7 +276,7 @@ public func applyEffect(at time: CMTime) -> CIImage? {
     }
 ```
 
-![animate.gif](%E5%9F%BA%E4%BA%8E%E8%87%AA%E5%AE%9A%E4%B9%89AVVideoComposition%E7%9A%84%E8%A7%86%E9%A2%91%E8%B4%B4%E7%BA%B8%E5%92%8C%E7%89%B9%E6%95%88%E5%AE%9E%E7%8E%B0%20b9b65a0f19e84652b71be8d985025660/animate%201.gif)
+![animate.gif](https://github.com/ijinfeng/iVisual/tree/main/resource/animate%201.gif)
 
 除了静态贴纸和动态贴纸，我还提供了一种动画贴纸，并实现了四种基础动画类型：`opacity`透明度、`rotate`旋转、`scale`缩放、`translate`位移。除了透明度变化，其他的动画都是基于`CAAffineTransform`来实现的。原理就是计算当前的状态处于动画过程中的哪个阶段，从而计算出中间态。例如做旋转变化：
 
@@ -332,7 +332,7 @@ public protocol SpecialEffectsProvider: VisualProvider {
 
 其实看到这里，要给视频添加特效你应该也有想法了。我这里直接利用`CoreImage`框架，简单的给视频添加了几个特效，实现了视频扭曲效果、点状化效果。先看看扭曲效果。
 
-![animate.gif](%E5%9F%BA%E4%BA%8E%E8%87%AA%E5%AE%9A%E4%B9%89AVVideoComposition%E7%9A%84%E8%A7%86%E9%A2%91%E8%B4%B4%E7%BA%B8%E5%92%8C%E7%89%B9%E6%95%88%E5%AE%9E%E7%8E%B0%20b9b65a0f19e84652b71be8d985025660/animate%202.gif)
+![animate.gif](https://github.com/ijinfeng/iVisual/tree/main/resource/animate%202.gif)
 
 可以看到视频在播放到1s至5s之间发生了扭曲。我利用了`CoreImage`中的滤镜`CIVortexDistortion`实现了这一效果。
 
@@ -427,6 +427,6 @@ func apply(rotate: CGFloat, extent: CGRect) -> CIImage {
 
 2、另`VideoComposition`重新渲染这一帧画面，尝试设置 `isFinished` 为false，但并没有效果
 
-![截屏2021-11-15 下午3.55.08.png](%E5%9F%BA%E4%BA%8E%E8%87%AA%E5%AE%9A%E4%B9%89AVVideoComposition%E7%9A%84%E8%A7%86%E9%A2%91%E8%B4%B4%E7%BA%B8%E5%92%8C%E7%89%B9%E6%95%88%E5%AE%9E%E7%8E%B0%20b9b65a0f19e84652b71be8d985025660/%E6%88%AA%E5%B1%8F2021-11-15_%E4%B8%8B%E5%8D%883.55.08.png)
+![截屏2021-11-15 下午3.55.08.png](https://github.com/ijinfeng/iVisual/tree/main/resource/error.png)
 
 关于第二个问题，如果有同学有什么好的方法的话，欢迎讨论👏。
