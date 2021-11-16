@@ -1,5 +1,4 @@
 
-
 # 基于自定义AVVideoComposition的视频贴纸和特效实现
 
 有过 `AVFoundation` 框架开发经验的同学应该听说过 `AVVideoComposition` 这个类，它的功能非常强大，我们可以通过它实现诸如贴纸，视频特效，转场等功能，基本上你在短视频编辑程序上看到的功能，都能通过它来实现。
@@ -239,7 +238,8 @@ timeLine.insert(element: overlay)
         player.replaceCurrentItem(with: playerItem)
 ```
 
-![animate.gif](https://github.com/ijinfeng/iVisual/tree/main/resource/animate.gif)
+
+![animate.gif](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/efb8c326d074463e99ecbf79f87b5270~tplv-k3u1fbpfcp-watermark.image?)
 
 而动态贴纸的原理其实和静态贴纸的原理是一样的，只不过多了解析gif图的过程。我们需要把gif的每一帧读取出来，得到他们每一帧的播放时长，总播放时长，总帧数。从而可以决定在某一时刻播放哪一帧画面。
 
@@ -276,7 +276,8 @@ public func applyEffect(at time: CMTime) -> CIImage? {
     }
 ```
 
-![animate.gif](https://github.com/ijinfeng/iVisual/tree/main/resource/animate%201.gif)
+
+![animate 1.gif](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c18ce149f1484cccaa274de78dfe7030~tplv-k3u1fbpfcp-watermark.image?)
 
 除了静态贴纸和动态贴纸，我还提供了一种动画贴纸，并实现了四种基础动画类型：`opacity`透明度、`rotate`旋转、`scale`缩放、`translate`位移。除了透明度变化，其他的动画都是基于`CAAffineTransform`来实现的。原理就是计算当前的状态处于动画过程中的哪个阶段，从而计算出中间态。例如做旋转变化：
 
@@ -332,7 +333,8 @@ public protocol SpecialEffectsProvider: VisualProvider {
 
 其实看到这里，要给视频添加特效你应该也有想法了。我这里直接利用`CoreImage`框架，简单的给视频添加了几个特效，实现了视频扭曲效果、点状化效果。先看看扭曲效果。
 
-![animate.gif](https://github.com/ijinfeng/iVisual/tree/main/resource/animate%202.gif)
+
+![animate 2.gif](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/dc5a209260eb43d4a0471f3ab689b08f~tplv-k3u1fbpfcp-watermark.image?)
 
 可以看到视频在播放到1s至5s之间发生了扭曲。我利用了`CoreImage`中的滤镜`CIVortexDistortion`实现了这一效果。
 
@@ -427,6 +429,7 @@ func apply(rotate: CGFloat, extent: CGRect) -> CIImage {
 
 2、另`VideoComposition`重新渲染这一帧画面，尝试设置 `isFinished` 为false，但并没有效果
 
-![截屏2021-11-15 下午3.55.08.png](https://github.com/ijinfeng/iVisual/tree/main/resource/error.png)
+
+![error.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9950e6cc098348b2b937ebc4ed55a859~tplv-k3u1fbpfcp-watermark.image?)
 
 关于第二个问题，如果有同学有什么好的方法的话，欢迎讨论👏。
