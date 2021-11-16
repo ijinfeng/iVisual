@@ -41,7 +41,6 @@ public extension TimeLine {
         let id = eidBuilder.get()
         element.visualElementId = id
         overlayElementDic[id] = element
-        renderCurrentFrameAgain()
         return id
     }
     
@@ -49,7 +48,6 @@ public extension TimeLine {
         let id = eidBuilder.get()
         element.visualElementId = id
         specialEffectsElementDic[id] = element
-        renderCurrentFrameAgain()
         return id
     }
     
@@ -60,7 +58,6 @@ public extension TimeLine {
         if specialEffectsElementDic.index(forKey: useId) != nil {
             specialEffectsElementDic.removeValue(forKey: useId)
         }
-        renderCurrentFrameAgain()
     }
 }
 
@@ -115,11 +112,5 @@ extension TimeLine {
         }
         
         return image
-    }
-    
-    
-    /// 重新渲染当前这一帧
-    func renderCurrentFrameAgain() {
-//        CompositionCoordinatorPool.shared.pop()?.needRenderAgain()
     }
 }

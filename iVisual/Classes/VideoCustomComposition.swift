@@ -17,8 +17,6 @@ public class VideoCustomComposition: NSObject, AVVideoCompositing {
     
     private var coordinator: CompositionCoordinator? = CompositionCoordinatorPool.shared.pop()
     
-    private var lastRequest: AVAsynchronousVideoCompositionRequest?
-    
     public enum VideoCustomCompositionError: Error {
         case newPixelBufferRequestFailed
     }
@@ -31,19 +29,6 @@ public class VideoCustomComposition: NSObject, AVVideoCompositing {
     
     private override init() {
         super.init()
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.init(rawValue: "哈哈哈"), object: nil, queue: nil) { n in
-            guard let request = self.lastRequest  else {
-                return
-            }
-            let _internal = request.value(forKey: "internal") as! NSObject
-            _internal.setValue(false, forKey: "isFinished")
-            print("需要重新渲染这一帧")
-            if let pixelBuffer = self.handleNewPixelBuffer(from: request) {
-                request.finish(withComposedVideoFrame: pixelBuffer)
-            } else {
-                request.finish(with: VideoCustomCompositionError.newPixelBufferRequestFailed)
-            }
-        }
     }
     
     public func renderContextChanged(_ newRenderContext: AVVideoCompositionRenderContext) {
@@ -57,7 +42,6 @@ public class VideoCustomComposition: NSObject, AVVideoCompositing {
             guard let strongSelf = self else {
                 return
             }
-            strongSelf.lastRequest = asyncVideoCompositionRequest
             if strongSelf.shouldCancelAllPendingRequests {
                 asyncVideoCompositionRequest.finishCancelledRequest()
             } else {

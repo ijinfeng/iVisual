@@ -64,7 +64,7 @@ class VideoPlayerViewController: UIViewController {
         timeLine = TimeLine(asset: asset)
         timeLine.contentMode = .scaleAspectFill
         timeLine.renderSize = CGSize(width: 1800, height: 1800)
-        timeLine.backgroundColor = UIColor.lightGray
+        timeLine.backgroundColor = UIColor.clear
         builder = VideoCompositionBuilder.init(exist: nil, timeLine: timeLine)
         
         player = AVPlayer.init(playerItem: playerItem)
@@ -80,12 +80,12 @@ class VideoPlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        view.backgroundColor = .lightGray
         
         changeNavigationItem()
         navigationItem.rightBarButtonItem?.isEnabled = false
         
-        playerLayer.backgroundColor = UIColor.black.cgColor
+        playerLayer.backgroundColor = UIColor.clear.cgColor
         playerLayer.frame = view.bounds
         view.layer.insertSublayer(playerLayer, at: 0)
         

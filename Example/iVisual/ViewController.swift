@@ -22,6 +22,7 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         // Do any additional setup after loading the view, typically from a nib.
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "沙盒", style: .plain, target: self, action: #selector(onClickOpenSandBox))
